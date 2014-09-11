@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MonkeyPinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana.png" translatesAutoresizingMaskIntoConstraints="NO" id="PUN-tz-ffP">
+                                <rect key="frame" x="129" y="276" width="175" height="175"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1W5-AR-sMf" appends="YES" id="iRM-Qq-zFf"/>
+                                    <outletCollection property="gestureRecognizers" destination="dQa-Qq-en5" appends="YES" id="iuG-ky-bUb"/>
+                                    <outletCollection property="gestureRecognizers" destination="YGK-AG-BpM" appends="YES" id="TJn-n3-7vw"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monkey.png" translatesAutoresizingMaskIntoConstraints="NO" id="bFL-e2-qXr">
+                                <rect key="frame" x="46" y="140" width="168" height="168"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gfT-M0-WIP" appends="YES" id="la0-1r-gRY"/>
+                                    <outletCollection property="gestureRecognizers" destination="mwo-W6-hAP" appends="YES" id="fxZ-dz-Eib"/>
+                                    <outletCollection property="gestureRecognizers" destination="bNX-0C-gLV" appends="YES" id="8ry-jX-VZV"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="gfT-M0-WIP">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="XoK-Mw-kdD"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="gnr-xL-aVR"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1W5-AR-sMf">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="Chw-re-gcV"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="lBU-J0-2KQ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="mwo-W6-hAP">
+                    <connections>
+                        <action selector="handlePinch:" destination="vXZ-lx-hvc" id="my8-BI-yQ7"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="DxC-7B-lAm"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <pinchGestureRecognizer id="dQa-Qq-en5">
+                    <connections>
+                        <action selector="handlePinch:" destination="vXZ-lx-hvc" id="M19-56-aAL"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="fPx-7D-CLz"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="bNX-0C-gLV">
+                    <connections>
+                        <action selector="handleRotate:" destination="vXZ-lx-hvc" id="zaV-bi-ZpL"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="Hgd-Cp-CVm"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <rotationGestureRecognizer id="YGK-AG-BpM">
+                    <connections>
+                        <action selector="handleRotate:" destination="vXZ-lx-hvc" id="ggM-EI-KH1"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="425-LK-gRY"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="74" y="128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banana.png" width="175" height="175"/>
+        <image name="monkey.png" width="168" height="168"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
+</document>
