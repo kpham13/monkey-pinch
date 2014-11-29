@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - AVFoundation Sound
+    // MARK: - AVFOUNDATION SOUND
     
     func loadSound(filename:NSString) -> AVAudioPlayer {
         let url = NSBundle.mainBundle().URLForResource(filename, withExtension: "caf")
@@ -68,10 +68,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return player
     }
     
-    // MARK: - Pan Gesture Recognizer
+    // MARK: - PAN GESTURE RECOGNIZER
     
     @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
-        return // comment for panning, uncomment for tickling
+        //return // comment for panning, uncomment for tickling
         
         let translation = recognizer.translationInView(self.view) // Can retrieve the amount the user has moved their finger by calling translationInView.
         recognizer.view!.center = CGPoint(x:recognizer.view!.center.x + translation.x, y:recognizer.view!.center.y + translation.y) // Reference to monkey image view by calling recognizer.view.
@@ -104,33 +104,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    // MARK: - Pinch Gesture Recognizer
+    // MARK: - PINCH GESTURE RECOGNIZER
     
     @IBAction func handlePinch(recognizer : UIPinchGestureRecognizer) {
         recognizer.view!.transform = CGAffineTransformScale(recognizer.view!.transform, recognizer.scale, recognizer.scale)
         recognizer.scale = 1
     }
     
-    // MARK: - Rotation Gesture Recognizer
+    // MARK: - ROTATION GESTURE RECOGNIZER
     
     @IBAction func handleRotate(recognizer : UIRotationGestureRecognizer) {
         recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation)
         recognizer.rotation = 0
     }
     
-    // MARK: - Tap Gesture Recognizer
+    // MARK: - TAP GESTURE RECOGNIZER
     
     func handleTap(recognizer: UITapGestureRecognizer) {
         self.chompPlayer?.play()
     }
     
-    // MARK: - Custom Tickle Gesture Recognizer
+    // MARK: - CUSTOM TICKLE GESTURE RECOGNIZER
     
     func handleTickle(recognizer:TickleGestureRecognizer) {
         self.hehePlayer?.play()
     }
     
-    // MARK: - Simultaneous Gesture Recognizers
+    // MARK: - SIMULTANEOUS GESTURE RECOGNIZERS
     
     func gestureRecognizer(UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
             return true
